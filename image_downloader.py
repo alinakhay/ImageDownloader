@@ -3,7 +3,15 @@ import requests as rq
 import os
 from bs4 import BeautifulSoup
 import time
+from sys import platform, exit
+from rich import print as printf
 
+# Checking operating system
+if not 'win32' in platform:
+    os.system('clear')
+    printf(f'[red]● {platform.capitalize()}[/]: Incompatible system')
+    exit()
+    
 # path= E:\web scraping\chromedriver_win32\chromedriver.exe
 path = input("Enter Path : ")
 
